@@ -15,6 +15,7 @@
     <form class="container-fluid" method="post">
         <h1>New Student Form:</h1><br>
         <div class="mb-3">
+            <!--Create a new div for each part of the form-->
             <div>
                 <label for="firstname" class="form-label">First Name (Maximum 25 Characters):</label>
                 <input type="text" class="form-control" id="firstname" name="firstname" maxlength="25" required>
@@ -26,6 +27,7 @@
             <div>
                 <div class="form-group">
                     <label for="title" class="form-label">Title:</label>
+                    <!-- Each option in the dropdown is stored in a bootstrap select-->
                     <select required class="form-select" aria-label="Default select example"> 
                         <option value="">-</option>
                         <option value="Mr">Mr</option>
@@ -64,6 +66,7 @@
     </form>
 
     <script>
+        // Script for checking that both of the boxes do not have the same subject.
         var Sub1 = document.getElementById("subject1");
         var Sub2 = document.getElementById("subject2");
         var ErrMsg = document.getElementById("errormsg")
