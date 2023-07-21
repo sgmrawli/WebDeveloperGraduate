@@ -19,6 +19,7 @@
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Fetch the local json file. I used live-server to host a local server to access this. Under working conditions, this would be a link to the full version given in the Word Doc.
             fetch('courses.json')
             .then(responseJSON => responseJSON.json())
             .then(fetchedData => {
@@ -29,6 +30,7 @@
                         
                         console.log(course.universities);
 
+                        // Create and add each part of the accordion/collapsibles classes to take the bootstrap styles.
                         var Box = document.createElement('div');
                         Box.classList.add('card');
 
@@ -38,6 +40,7 @@
                         var boxHeading = document.createElement('h5');
                         boxHeading.classList.add('mb-0')
 
+                        // In the naming schemes, the blankspaces need to be removed via the replace function
                         var Button = document.createElement('button');
                         Button.classList.add('btn', 'btn-link');
                         Button.setAttribute('data-bs-toggle', 'collapse');
@@ -63,12 +66,14 @@
                         var tableHeadingUni = document.createElement('th');
                         var tableHeadingCountry = document.createElement('th');
 
+                        // Create the headers for the table and append into the div.
                         tableHeadingUni.textContent = 'University';
                         tableHeadingCountry.textContent = 'Country';
                         tableHeadingRow.appendChild(tableHeadingUni);
                         tableHeadingRow.appendChild(tableHeadingCountry);
                         tableHeading.appendChild(tableHeadingRow);
 
+                        // Create a row for each entry in the universities list
                         var tableBody = document.createElement('tbody');
                         course.universities.forEach(name => {
                             var tableRow = document.createElement('tr');
